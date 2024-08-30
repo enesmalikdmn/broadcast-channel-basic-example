@@ -179,3 +179,8 @@ nav a {
 .movie-info-link:hover {
   background-color: #0056b3;
 }
+
+.movie-not-found {
+  text-align: center;
+  padding: 20px;
+}

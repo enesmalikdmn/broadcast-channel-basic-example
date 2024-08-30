@@ -14,7 +14,7 @@ const MovieInfo = (props) => {
 
   return (
     <div className="movie-info">
-        {movie && (
+        {movie ? (
              <div className="movie-info-container">
              <div className="movie-info-header">
                <img src={movie.big_image} alt={movie.title} className="movie-info-image" />
@@ -31,7 +31,12 @@ const MovieInfo = (props) => {
                </div>
              </div>
            </div>
-        )}
+        ) : (
+            <div className="movie-not-found">
+              <h1>Movie Not Found</h1>
+              <p>Sorry, we couldn't find the movie you're looking for.</p>
+            </div>
+          )}
     </div>
   );
 };
