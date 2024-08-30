@@ -1,20 +1,24 @@
-// App.js
-
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 const MovieList = (props) => {
+  // const navigate = useNavigate();
 
-
-  const showInfo = (e) => {
+  const showInfo = (movie) => {
+    // navigate(`/movie-info/${movieId}`);
     const bc = new BroadcastChannel('movie-info');
-    bc.postMessage(e);
+    bc.postMessage(movie);
   }
 
   return (
     <div className="movie-container">
       {props.movies?.map((movie) => (
-        <div className="movie-card" onClick={() => showInfo(movie)} key={movie.id}>
+        <div 
+          className="movie-card" 
+          key={movie.id}
+          onClick={() => showInfo(movie)} // Click olayı ile showInfo fonksiyonunu çağırıyoruz
+        >
           <img src={movie.thumbnail} alt={movie.title} className="movie-thumbnail" />
           <div className="movie-info">
             <div className="movie-title">{movie.title}</div>
