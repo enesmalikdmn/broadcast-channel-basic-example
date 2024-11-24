@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 const MovieList = (props) => {
   // const navigate = useNavigate();
 
   const showInfo = (movie) => {
-    // navigate(`/movie-info/${movieId}`);
+    // navigate(`/movie-info/${movie.id}`);
     const bc = new BroadcastChannel('movie-info');
     bc.postMessage(movie);
   }
